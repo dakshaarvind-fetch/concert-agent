@@ -19,7 +19,7 @@ async def score_events(
     """
     raise NotImplementedError(
         "scoring.score_events — implement in step 8. "
-        "Use text-embedding-3-small via langchain-openai."
+        "Use OpenAIEmbeddings(base_url=ASI_BASE, api_key=asi_api_key) for embeddings."
     )
 
 
