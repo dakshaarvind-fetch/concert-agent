@@ -34,7 +34,7 @@ async def load_taste_profile(state: ConciergeState) -> dict:
 
     db = get_supabase()
 
-    # get_or_create profile
+    # get_or_create profile — maybe_single() returns None (not APIResponse) when no row found
     res = (
         db.table("profiles")
         .select("*")
@@ -42,8 +42,9 @@ async def load_taste_profile(state: ConciergeState) -> dict:
         .maybe_single()
         .execute()
     )
-    if res.data:
-        profile = res.data
+    profile_data = res.data if res is not None else None
+    if profile_data:
+        profile = profile_data
     else:
         profile = (
             db.table("profiles")
@@ -61,7 +62,7 @@ async def load_taste_profile(state: ConciergeState) -> dict:
         .maybe_single()
         .execute()
     )
-    if taste_res.data:
+    if taste_res is not None and taste_res.data:
         t = taste_res.data
         taste = TasteProfile(
             user_id=user_id,

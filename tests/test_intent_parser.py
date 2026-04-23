@@ -135,5 +135,5 @@ async def test_parse_intent_real_llm():
 
     assert result.type == "search"
     assert result.agent_address == SENDER
-    assert result.filters is not None
-    print(f"\nParsed intent: type={result.type}, city={result.filters.city}, genres={result.filters.genres}")
+    assert result.filters is not None  # guaranteed by parse_intent fallback
+    print(f"\nParsed intent: type={result.type}, city={result.filters.city}, genres={result.filters.genres}, max_price={result.filters.max_price}")

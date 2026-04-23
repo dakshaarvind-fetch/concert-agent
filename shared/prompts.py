@@ -14,12 +14,21 @@ Intent types:
 - update_profile: user wants to change their city, email, preferences, etc.
 - help: anything else / unclear
 
-For search intents, extract:
-- city (if mentioned)
-- date_range (start/end dates if mentioned; default to next 30 days if omitted)
-- max_price (if mentioned)
-- genres (list of music genres mentioned)
-- vibe (mood/vibe descriptor like "intimate", "high energy", "outdoor")
+For search intents you MUST populate the filters object (never leave it null). Extract:
+- city (if mentioned, else null)
+- date_range (start/end dates if mentioned; default to next 30 days from today if omitted)
+- max_price (numeric, if mentioned, else null)
+- genres (list of music genre strings mentioned, else [])
+- vibe (mood/vibe descriptor like "intimate", "high energy", "outdoor", else null)
+
+Example search output:
+{
+  "type": "search",
+  "user_id": "",
+  "agent_address": "<from context>",
+  "filters": {"city": "London", "genres": ["indie"], "max_price": 60, "date_range": {"start": "2026-04-26", "end": "2026-04-27"}, "vibe": null, "radius_km": 50},
+  "raw_query": "<original message>"
+}
 
 Always return a valid JSON object matching the Intent schema.
 """
