@@ -49,7 +49,7 @@ class Venue(BaseModel):
 
 class EventRaw(BaseModel):
     id: str
-    source: Literal["ticketmaster", "songkick"]
+    source: Literal["ticketmaster", "eventbrite"]
     name: str
     artists: list[str] = Field(default_factory=list)
     venue: Venue
@@ -62,13 +62,10 @@ class EventRaw(BaseModel):
     description: str | None = None
 
 
-class EventEnriched(EventRaw):
-    """EventRaw + Spotify enrichment (popularity, audio features, etc.)."""
-    spotify_popularity: int | None = None
-    spotify_preview_url: str | None = None
+EventEnriched = EventRaw  # enrichment step removed (no Spotify)
 
 
-class EventScored(EventEnriched):
+class EventScored(EventRaw):
     taste_fit_score: int = Field(ge=0, le=100)
     reasoning: str  # one sentence, written by Claude
 

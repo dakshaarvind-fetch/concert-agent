@@ -14,17 +14,11 @@ class Settings(BaseSettings):
     agentverse_api_key: str
 
     # ── LLM ──────────────────────────────────────────────────────────────────
-    anthropic_api_key: str
-    asi_api_key: str = ""
-    openai_api_key: str                  # embeddings
+    asi_api_key: str                     # ASI:One — chat completions + embeddings
 
     # ── Event APIs ───────────────────────────────────────────────────────────
     ticketmaster_api_key: str
-    songkick_api_key: str = ""
-
-    # ── Spotify ──────────────────────────────────────────────────────────────
-    spotify_client_id: str = ""
-    spotify_client_secret: str = ""
+    eventbrite_api_key: str = ""        # optional — indie/smaller venue fallback
 
     # ── Database ─────────────────────────────────────────────────────────────
     supabase_url: str

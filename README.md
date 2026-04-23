@@ -14,8 +14,7 @@ ASI:One (user) → Agentverse Marketplace → Concierge Agent (Mailbox)
                                                      │
                                   ┌──────────────────┤
                                   ▼                  ▼
-                           Ticketmaster           Songkick
-                           Spotify (taste)
+                           Ticketmaster         Eventbrite
                                   │
                                Supabase
                                   │
@@ -43,8 +42,7 @@ Follow these steps in sequence. Do not skip ahead.
 | 7 | Wire graph into agent handler | ⬜ |
 | 8 | Scoring pipeline — pgvector embeddings + Claude reasoning | ⬜ |
 | 9 | Watchlist + seen handlers | ⬜ |
-| 10 | Spotify OAuth — taste seeding | ⬜ |
-| 11 | Songkick fallback tool | ⬜ |
+| 10 | Eventbrite fallback tool | ⬜ |
 | 12 | Digest agent — email on interval | ⬜ |
 | 13 | Agentverse deployment — Mailbox (Concierge) + Hosted (Digest) | ⬜ |
 
@@ -53,7 +51,7 @@ Follow these steps in sequence. Do not skip ahead.
 ```bash
 # 1. Clone and set up environment
 cp .env.example .env
-# fill in AGENT_SEED_PHRASE, AGENTVERSE_API_KEY, ANTHROPIC_API_KEY at minimum
+# fill in AGENT_SEED_PHRASE, AGENTVERSE_API_KEY, ASI_API_KEY at minimum
 
 # 2. Install dependencies (uv recommended)
 uv venv && source .venv/bin/activate

@@ -5,8 +5,7 @@ uagents-core==0.4.4
 # ── Reasoning pipeline ────────────────────────────────────────────────────────
 langgraph>=0.2.0,<0.3
 langchain>=0.3.0,<0.4
-langchain-anthropic>=0.3.0,<0.4
-langchain-openai>=0.2.0,<0.3       # text-embedding-3-small
+langchain-openai>=0.2.0,<0.3       # chat + embeddings via ASI:One
 
 # ── Database ──────────────────────────────────────────────────────────────────
 supabase>=2.4.0,<3.0

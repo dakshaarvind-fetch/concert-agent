@@ -41,6 +41,6 @@ Here's what you can ask me:
 • "I went to the Fred Again show last night, 5 stars, energy was insane"
 • "Update my city to Los Angeles"
 
-I use your Spotify history to score events for taste fit, and I'll email you
-a weekly digest of new shows. Type anything to get started.
+I'll score events against your taste profile and email you a weekly digest
+of new shows. Type anything to get started.
 """

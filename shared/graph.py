@@ -42,11 +42,6 @@ async def fetch_events_parallel(state: ConciergeState) -> dict:
     raise NotImplementedError("fetch_events_parallel — implement in step 5")
 
 
-async def enrich_with_spotify(state: ConciergeState) -> dict:
-    """Node 3: enrich events with Spotify popularity/preview data."""
-    raise NotImplementedError("enrich_with_spotify — implement in step 8")
-
-
 async def score_by_taste_fit(state: ConciergeState) -> dict:
     """Node 4: compute taste_fit_score for each event."""
     raise NotImplementedError("score_by_taste_fit — implement in step 8")
