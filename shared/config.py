@@ -15,6 +15,7 @@ class Settings(BaseSettings):
 
     # ── LLM ──────────────────────────────────────────────────────────────────
     asi_api_key: str                     # ASI:One — chat completions + embeddings
+    asi_model: str = "asi1"              # model name served at ASI:One endpoint
 
     # ── Event APIs ───────────────────────────────────────────────────────────
     ticketmaster_api_key: str
