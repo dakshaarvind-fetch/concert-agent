@@ -1,6 +1,6 @@
 # ── Fetch.ai ──────────────────────────────────────────────────────────────────
-uagents==0.24.2
-uagents-core==0.4.4
+uagents @ git+https://github.com/fetchai/uAgents.git#subdirectory=python
+uagents-core @ git+https://github.com/fetchai/uAgents.git#subdirectory=python/uagents-core
 
 # ── Reasoning pipeline ────────────────────────────────────────────────────────
 langgraph>=0.2.0,<0.3
