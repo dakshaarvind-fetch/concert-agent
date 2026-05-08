@@ -119,9 +119,9 @@ async def test_parse_intent_real_llm():
     """Hits real ASI:One API. Requires ASI_API_KEY in .env"""
     import os
     from dotenv import load_dotenv
-    load_dotenv()
+    load_dotenv(override=True)
 
-    if not os.getenv("ASI_API_KEY"):
+    if not os.getenv("ASI_API_KEY") or os.getenv("ASI_API_KEY") == "test-asi-key":
         pytest.skip("ASI_API_KEY not set")
 
     # Clear LRU cache so a fresh client is built with real settings

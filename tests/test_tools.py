@@ -140,10 +140,13 @@ async def test_ticketmaster_real_api():
     """Hits real Ticketmaster API. Requires TICKETMASTER_API_KEY in .env"""
     import os
     from dotenv import load_dotenv
-    load_dotenv()
+    load_dotenv(override=True)
 
-    if not os.getenv("TICKETMASTER_API_KEY"):
+    if not os.getenv("TICKETMASTER_API_KEY") or os.getenv("TICKETMASTER_API_KEY") == "test-tm-key":
         pytest.skip("TICKETMASTER_API_KEY not set")
+
+    import shared.db.client as _db_client
+    _db_client._client = None  # force rebuild with real credentials
 
     from shared.tools.ticketmaster import search_ticketmaster_events
     results = await search_ticketmaster_events.ainvoke({
